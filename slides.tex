@@ -87,6 +87,7 @@
 \deftranslation[to=brazil]{Corollary}{Proposta}
 \deftranslation[to=brazil]{Lemma}{Lema}
 \deftranslation[to=brazil]{Proof}{Prova}
+\deftranslation[to=brazil]{Definition}{DEF}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb}
 \usepackage{mathtools}
@@ -221,7 +222,20 @@
         \begin{enumerate}
             \item Suponha que um subgrafo $G - e$, para algum $e \in E$, é não-conexo. Se as duas componentes possuírem um número par de vértices, então, pela prova anterior em [3], elas possuem floresta $F_{1}$ e $F_{2}$, respectivamente, tal que $F = F_{1} \cup F_{2}$ é uma floresta perfeita em $G$.
             \item Se as componentes possuírem número ímpar de vértices, então $G'_{1} = G_{1} + e$ e $G'_{2} = G_{2} + e$ contêm um número par de vértices e $F' = F'_{1} \cup F'_{2}$ é uma floresta perfeita em $G$.
-            \item Se $G - e$ permanecer conexo, 
+        \end{enumerate}
+    \end{proof}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{proof}[Prova (por indução em $|E|$) (cont.)]
+        \begin{enumerate}
+            \setcounter{enumi}{2}
+            \item Se $G - e$ permanecer conexo, então, por indução, ainda existe uma floresta perfeita $F$ em $G - e$ e, por conseguinte, em $G$. Suponha que $e$ seja uma aresta de corte em $F$. Então, por [1], cada componente possui uma floresta perfeita ($F_{1}$ e $F_{2}$, respectivamente) e $F = F_{1} \cup F_{2}$ ainda é uma floresta perfeita em $G$.
+            \item Suponha agora que $e$ não é uma aresta de corte e, portanto, conecta dois vértices $u$ e $v$ pertencentes à mesma componente $H$ de $F$. Seja $K$ a únião de todas as demais componentes de $F$. Se $K$ for vazia, então $F = H$ é uma árvore e satisfaz as condições para ser uma floresta perfeita de $G$.
+            \item Se $K \neq \{\}$, considere o subgrafo induzido em $G$ pelos vértices de $H$, cujo conjunto de arestas é $E(H) + e$, já que H é o subgrafo induzido conexo de $G - e$. Isto permite concluir que $H + e$ é um subgrafo induzido de $G$, que possui exatamente um único ciclo $C$ que contém a aresta $e$. Considere o subgrafo $H - E(C)$ obtido pela remoção de todas as arestas de $H$ que pertencem também a $C$, 
         \end{enumerate}
     \end{proof}
 
