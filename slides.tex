@@ -1,0 +1,259 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+% \usetheme{AnnArbor}
+% \usetheme{Antibes} +
+% \usetheme{Bergen}
+% \usetheme{Berkeley}
+% \usetheme{Berlin}
+% \usetheme{Boadilla}
+\usetheme{CambridgeUS}
+% \usetheme{Copenhagen} +
+% \usetheme{Darmstadt}
+% \usetheme{Dresden}
+% \usetheme{Frankfurt}
+% \usetheme{Goettingen}
+% \usetheme{Hannover}
+% \usetheme{Ilmenau}
+% \usetheme{JuanLesPins}
+% \usetheme{Luebeck} +
+% \usetheme{Madrid}
+% \usetheme{Malmoe}
+% \usetheme{Marburg}
+% \usetheme{Montpellier} +
+% \usetheme{PaloAlto}
+% \usetheme{Pittsburgh}
+% \usetheme{Rochester}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+% \usetheme{Warsaw} +
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+% \usecolortheme{albatross}
+\usecolortheme{beaver}
+% \usecolortheme{beetle}
+% \usecolortheme{crane}
+% \usecolortheme{dolphin}
+% \usecolortheme{dove}
+% \usecolortheme{fly}
+% \usecolortheme{lily}
+% \usecolortheme{orchid}
+% \usecolortheme{rose}
+% \usecolortheme{seagull}
+% \usecolortheme{sidebartab}
+% \usecolortheme{seahorse}
+% \usecolortheme{whale}
+% \usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[brazil]{babel}
+\selectlanguage{brazil}
+\languagepath{brazil}
+\deftranslation[to=brazil]{Example}{Exemplo}
+\deftranslation[to=brazil]{Theorem}{Teorema}
+\deftranslation[to=brazil]{Corollary}{Proposta}
+\deftranslation[to=brazil]{Lemma}{Lema}
+\deftranslation[to=brazil]{Proof}{Prova}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{pythonhighlight}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[Teorema da Floresta Perfeita]{Duas provas curtas do Teorema da Floresta Perfeita} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Ramon Duarte de Melo \& Yago Carvalho} % Your name
+\institute[UFRJ] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+    Universidade Federal do Rio de Janeiro \\ % Your institution for the title page
+    \medskip
+    \textit{ramonduarte@poli.ufrj.br \& } \\ % Your email address
+    }
+    \date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame} % SLIDE 1
+    \titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame} % SLIDE 2
+    \frametitle{Sumário} % Table of contents slide, comment this block out to remove it
+    \tableofcontents 
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+% \section{O Problema} 
+%------------------------------------------------
+
+\section{Introdução}
+
+
+\begin{frame} % SLIDE 3
+    \frametitle{}
+
+    \begin{corollary}
+        Dado um grafo $G = (V, E)$ com $|V| = n$, um subgrafo \textbf{gerador} $F$ do grafo $G$ é uma \textbf{floresta perfeita} se
+        \begin{enumerate}
+            \item $F$ for uma floresta.
+            \item todos os graus de todos os vértices de $F$ forem ímpares.
+            \item cada uma das sub-árvores de $F$ é um subgrafo induzido de $G$.
+        \end{enumerate}
+    \end{corollary}
+
+    \begin{definition}
+        \begin{itemize}
+            \item Um \textbf{emparelhamento} é um conjunto de arestas não-adjacentes.
+            \item Um emparelhamento é dito \textbf{máximo} se possui o maior número possível de arestas.
+            \item Um emparelhamento máximo é dito \textbf{perfeito} se suas arestas cobrem todos os vértices do grafo.
+        \end{itemize}
+        
+    \end{definition}
+
+\end{frame}
+
+
+\begin{frame} % SLIDE 4
+    \frametitle{}
+
+    \begin{corollary}
+        Dado um grafo $G = (V, E)$ com $|V| = n$, podemos afirmar que ele contém uma floresta perfeita se
+        \begin{enumerate}
+            \item $n$ for um número par.
+            \item $G$ for conexo.
+        \end{enumerate}
+    \end{corollary}
+
+\end{frame}
+
+\section{Primeira prova}
+
+\begin{frame} % SLIDE 3
+    \frametitle{}
+
+    \begin{lemma}
+        Se $G$ for um grafo conexo com $n$ vértices, sendo $n$ par, e não for uma árvore, então $G$ possui uma árvore geradora com pelo menos dois vértices de grau par.
+    \end{lemma}
+
+    \begin{proof}[Prova]
+        Seja $T$ uma árvore geradora de $G$.
+        Suponha $T$ com todos os vértices de grau ímpar.
+        Como $G$ não é uma árvore, existe ao menos uma aresta $e \in E(G \backslash T)$.
+        Suponha que ela conecte os vértices $u$ e $v$.
+        Considere a árvore $T^{*}$ formada pela adição de $e$ a $T$ e a remoção da aresta $(u, w)$, onde $w$ é o único vizinho de $u$ no caminho entre $u$ e $v$ em $T$. O grau de $v$ e $w$ agora é par, e a árvore geradora $T^{*}$ satisfaz o lema.
+    \end{proof}
+
+\end{frame}
+
+
+\begin{frame} % SLIDE 3
+    \frametitle{}
+
+    \begin{theorem}
+        Se $G$ é um grafo conexo com $n$ vértices e $n$ é um número par, então $G$ possui uma floresta perfeita.
+    \end{theorem}
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+
+    \begin{proof}[Prova (por indução)]
+        \begin{enumerate}
+            \item Se $G$ for uma árvore com todos os vértices de grau ímpar, então $G$ é uma floresta perfeita.
+            \item Se $G$ possuir ao menos um vértice $w$ de grau par, então há um número par de sub-árvores em $w$, sendo que ao menos uma delas contém um número par de vértices. Suponha que $G_{1}$ seja o subgrafo induzido de $G$ nesta sub-árvore e, portanto, possua ordem par. Então, $G_{2}$, o subgrafo induzido por $w$ e todas as suas demais sub-árvores, também possui ordem par. Como $G_{1}$ e $G_{2}$ são conexos, podemos dizer, por indução, que há uma floresta perfeita $F_{1}$ em $G_{1}$ e outra, $F_{2}$, em $G_{2}$. Por conseguinte, $F = F_{1} \cup F_{2}$ é uma floresta perfeita em $G$.
+            % floresta + floresta = floresta
+            \item Se $G$ não é uma árvore, então, pelo Lema, $G$ possui uma árvore geradora $T$ com pelo menos dois vértices de grau par. Por [2], sabemos que $T$ possui uma floresta perfeita e, por conseguinte, $G$ também a possui.
+        \end{enumerate}
+    \end{proof}
+
+\end{frame}
+
+\section{Segunda prova}
+
+
+% \section{Referências bibliográficas}
+
+% \begin{frame} % SLIDE 53
+%     \frametitle{Referências bibliográficas}
+%     \footnotesize{
+%     \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+%     % \bibitem[Smith, 2012]{p1} John Smith (2012)
+%         \bibitem[Silberschatz, 2010]{p1}
+%         Silberschatz, A., Korth, H. F., \& Sudarshan, S. (2010). Database system concepts (Vol. 4). New York: McGraw-Hill.
+
+%         \bibitem[Rawat, 2017]{p2}
+%         Rawat, U. (2017). Implementation of Locking in DBMS. Acessado a \date{25/11/2018} em https://www.geeksforgeeks.org/implementation-of-locking-in-dbms/.
+
+%         \bibitem[Porfirio, 2013]{p3}
+%         Porfirio, Alice \& Pellegrini, Alessandro \& Di Sanzo, Pierangelo \& Quaglia, Francesco. (2013). Transparent Support for Partial Rollback in Software Transactional Memories. 8097. 583-594. 10.1007/978-3-642-40047-6\_59. 
+
+%         \bibitem[Poddar, 2013]{p4}
+%         Poddar, Saumendra. (2003). SQL Server Transactions and Error Handling. Acessado a \date{25/11/2018} em https://www.codeproject.com/Articles/4451/SQL-Server-Transactions-and-Error-Handling.
+%     \end{thebibliography}
+%     }
+% \end{frame}
+
+
+% \begin{frame} % SLIDE 53
+%     \frametitle{Referências bibliográficas}
+%     \footnotesize{
+%     \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+
+%     \bibitem[Singhal, 2018]{p5}
+%         Singhal, Akshay. (2018). Cascading Schedule | Cascading Rollback | Cascadeless Schedule. Acessado a \date{25/11/2018} em https://www.gatevidyalay.com/cascading-schedule-cascading-rollback-cascadeless-schedule/.
+
+%         \bibitem[Pandey, 2018]{p6}
+%         Pandey, Anand. (2018). Transactions and Concurrency Control. Acessado a \date{25/11/2018} em https://gradeup.co/transactions-and-concurrency-control-i-4c5d9b27-c5a7-11e5-bcc4-bc86a005f7ba.
+
+% 	    \bibitem[Difference between, 2018]{p7}
+%         Difference between. (2018). Difference between Deadlock and Starvation. Acessado a \date{25/11/2018} em http://www.differencebetween.info/difference-between-deadlock-and-starvation.
+
+%     \end{thebibliography}
+%     }
+% \end{frame}
+
+%------------------------------------------------
+
+\end{document} 
