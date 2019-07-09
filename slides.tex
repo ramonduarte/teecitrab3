@@ -199,7 +199,7 @@
 \begin{frame}
     \frametitle{}
 
-    \begin{proof}[Prova (por indução)]
+    \begin{proof}[Prova (por indução em $|V|$)]
         \begin{enumerate}
             \item Se $G$ for uma árvore com todos os vértices de grau ímpar, então $G$ é uma floresta perfeita.
             \item Se $G$ possuir ao menos um vértice $w$ de grau par, então há um número par de sub-árvores em $w$, sendo que ao menos uma delas contém um número par de vértices. Suponha que $G_{1}$ seja o subgrafo induzido de $G$ nesta sub-árvore e, portanto, possua ordem par. Então, $G_{2}$, o subgrafo induzido por $w$ e todas as suas demais sub-árvores, também possui ordem par. Como $G_{1}$ e $G_{2}$ são conexos, podemos dizer, por indução, que há uma floresta perfeita $F_{1}$ em $G_{1}$ e outra, $F_{2}$, em $G_{2}$. Por conseguinte, $F = F_{1} \cup F_{2}$ é uma floresta perfeita em $G$.
@@ -212,6 +212,20 @@
 
 \section{Segunda prova}
 
+\begin{frame}
+    \frametitle{}
+
+    \begin{proof}[Prova (por indução em $|E|$)]
+        Seja $|E| = m$ para um grafo $G = (V, E)$. 
+
+        \begin{enumerate}
+            \item Suponha que um subgrafo $G - e$, para algum $e \in E$, é não-conexo. Se as duas componentes possuírem um número par de vértices, então, pela prova anterior em [3], elas possuem floresta $F_{1}$ e $F_{2}$, respectivamente, tal que $F = F_{1} \cup F_{2}$ é uma floresta perfeita em $G$.
+            \item Se as componentes possuírem número ímpar de vértices, então $G'_{1} = G_{1} + e$ e $G'_{2} = G_{2} + e$ contêm um número par de vértices e $F' = F'_{1} \cup F'_{2}$ é uma floresta perfeita em $G$.
+            \item Se $G - e$ permanecer conexo, 
+        \end{enumerate}
+    \end{proof}
+
+\end{frame}
 
 % \section{Referências bibliográficas}
 
